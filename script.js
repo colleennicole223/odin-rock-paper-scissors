@@ -1,7 +1,9 @@
 
 //Main
 
-getComputerChoice()
+let computerChoice = getComputerChoice()
+let playerChoice = 'Rock'
+identifyWinner(computerChoice, playerChoice)
 
 
 /*
@@ -18,13 +20,47 @@ function getComputerChoice() {
     switch(randomChoice) {
         case 0:
             console.log("Rock")
-            break;
+            return "Rock";
         case 1:
             console.log("Paper")
-            break;
+            return "Paper";
         case 2:
             console.log("Scissors")
-            break;
+            return "Scissors";
 
     }
+    
+}
+
+
+function identifyWinner(computerChoice, playerChoice) {
+
+    console.log(computerChoice) 
+    console.log(playerChoice) 
+
+    if (computerChoice == playerChoice){
+        console.log("Its a tie!")
+    } else if (computerChoice == 'Rock'){
+        if (playerChoice == 'Paper'){
+            console.log("You win!")
+        } else {
+            console.log("Computer wins!")
+        }
+
+    } else if (computerChoice == 'Paper'){
+        if (playerChoice == 'Scissors'){
+            console.log("You win!")
+        } else {
+            console.log("Computer wins!")
+        }
+
+    } else {
+        if (playerChoice == 'Rock'){
+            console.log("You win!")
+        } else {
+            console.log("Computer wins!")
+        }
+
+    }
+
 }
