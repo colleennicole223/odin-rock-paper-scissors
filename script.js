@@ -12,6 +12,11 @@ Return a random 'rock', 'paper', or 'scissors'
 - Selecet case from switch statement using random integer
 */
 
+
+const button = document.querySelector('button');
+
+
+
 function getComputerChoice() {
 
     var randomChoice = Math.floor(Math.random()*3) //where Math.floor rounds to the nearest Int 
@@ -33,6 +38,10 @@ function identifyWinner(computerChoice, playerChoice) {
 
     console.log(computerChoice) 
     console.log(playerChoice) 
+
+    if (playerChoice == ''){
+        return "No input, Computer wins by default"
+    }
 
     if (computerChoice == playerChoice){
         return "Its a tie!"
@@ -67,7 +76,7 @@ function playGame() {
     let playerPoints = 0
     let computerPoints = 0
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0;  ; i++) {
         let computerChoice = getComputerChoice()
         let playerChoice = prompt('Rock, Paper, or Scissors?').toLowerCase()
         let winner = identifyWinner(computerChoice, playerChoice)
@@ -76,11 +85,13 @@ function playGame() {
             playerPoints = playerPoints + 1
         } else if (winner.slice(0,1) == 'I'){
 
+        } else if (winner.slice(0,1) == 'N'){
+            computerPoints = computerPoints + 1
         } else {
             computerPoints = computerPoints + 1
         }
         
-
+        
 
         alert(winner)
         alert("Your Points: " + playerPoints + "   Computer Points: "  + computerPoints);

@@ -1,1 +1,75 @@
 /* style.css */
+
+body {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 600px;
+    background-color: rgb(23, 23, 23);
+}
+
+button {
+    border-width: 0px;
+}
+
+.graphic {
+    width: 50%;
+}
+
+.bannerText {
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 50px;
+    padding: 8px 16px;
+    margin: 16px;
+    
+}
+
+.main {
+    display: flex;
+    flex-direction:row;
+    flex: 1;
+}
+
+
+.score {
+    padding: 40px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 40px;
+}
+
+.rock {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #D9144B;
+    
+}
+
+.paper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #14AAD9;
+}
+
+.scissors {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #D9CB14;
+}
+
+
