@@ -27,21 +27,26 @@ button {
     
 }
 
-.main {
+#main {
     display: flex;
     flex-direction:row;
     flex: 1;
 }
 
 
-.score {
+#info {
     padding: 40px;
     text-align: center;
     color: whitesmoke;
     font-size: 40px;
 }
 
-.rock {
+.scoring {
+    display: flex;
+    flex-direction: row;
+}
+
+#rock {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -52,7 +57,7 @@ button {
     
 }
 
-.paper {
+#paper {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -62,7 +67,7 @@ button {
     background-color: #14AAD9;
 }
 
-.scissors {
+#scissors {
     padding: 20px;
     display: flex;
     flex-direction: column;

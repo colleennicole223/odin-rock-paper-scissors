@@ -1,21 +1,21 @@
 
-//Main
+let main = document.querySelector('#main');
 
-playGame()
+main.addEventListener('click', (event) => {
+    let target = event.target;
 
-
-/*
-Functions
-
-Return a random 'rock', 'paper', or 'scissors' 
-- produce a random integer from 0 - 2
-- Selecet case from switch statement using random integer
-*/
-
-
-const button = document.querySelector('button');
-
-
+    switch(target.id) {
+        case 'rock':
+            console.log('Home menu item was clicked');
+            break;
+        case 'paper':
+            console.log('Dashboard menu item was clicked');
+            break;
+        case 'scissors':
+            console.log('Report menu item was clicked');
+            break;
+    }
+});
 
 function getComputerChoice() {
 
@@ -32,7 +32,6 @@ function getComputerChoice() {
     }
     
 }
-
 
 function identifyWinner(computerChoice, playerChoice) {
 
@@ -71,31 +70,34 @@ function identifyWinner(computerChoice, playerChoice) {
 }
 
 
-function playGame() {
+function playGame(playerChoice) {
+
+    console.log("Player choice "+playerChoice);
+
     
     let playerPoints = 0
     let computerPoints = 0
 
-    for (i = 0;  ; i++) {
-        let computerChoice = getComputerChoice()
-        let playerChoice = prompt('Rock, Paper, or Scissors?').toLowerCase()
-        let winner = identifyWinner(computerChoice, playerChoice)
-        
-        if (winner.slice(0,1) == 'Y'){
-            playerPoints = playerPoints + 1
-        } else if (winner.slice(0,1) == 'I'){
+    let computerChoice = getComputerChoice()
+    let winner = identifyWinner(computerChoice, playerChoice)
+    
+    if (winner.slice(0,1) == 'Y'){
+        playerPoints = playerPoints + 1
+    } else if (winner.slice(0,1) == 'I'){
 
-        } else if (winner.slice(0,1) == 'N'){
-            computerPoints = computerPoints + 1
-        } else {
-            computerPoints = computerPoints + 1
-        }
-        
-        
-
-        alert(winner)
-        alert("Your Points: " + playerPoints + "   Computer Points: "  + computerPoints);
+    } else if (winner.slice(0,1) == 'N'){
+        computerPoints = computerPoints + 1
+    } else {
+        computerPoints = computerPoints + 1
     }
+
+    
+    const winnerStatement = document.createElement("div");
+    winnerStatement.classList.add("winnerStatement");
+    winnerStatement.textContent = winner;
+    info.appendChild(winnerStatement);
+    //alert(winner)
+    //alert("Your Points: " + playerPoints + "   Computer Points: "  + computerPoints);
 
     if (playerPoints > computerPoints) {
         alert("Great job, you won!")
@@ -105,5 +107,9 @@ function playGame() {
         alert("Computer wins! Better luck next time!")
     }
     
+    return
 
 }
+
+
+

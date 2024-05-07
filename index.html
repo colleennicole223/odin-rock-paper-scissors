@@ -4,28 +4,33 @@
 
   <head>
     <meta charset="UTF-8">
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css"> 
   </head>
 
   <body>
-    <div class="main">
-        <button class="rock">
+    <div id="main">
+        <button id="rock">
           <div class="bannerText">ROCK</div>
           <img class="graphic" src="images/rock.png">
         </button>
-        <button class="paper">
+        <button id="paper"  onclick="playGame('paper')">
           <div class="bannerText">PAPER</div>
           <img class="graphic" src="images/paper.png">
         </button>
-        <button class="scissors">
+        <button id="scissors"  onclick="playGame('scissors')">
           <div class="bannerText">SCISSOR</div>
           <img class="graphic" src="images/scissor.png">
         </button>
     </div>
-    <div class="score">
-      <div>Here is some text</div>
+    <div id="info">
+      <button id="CONFUSED">?</button>
+      <div id="result">Here is some text</div>
+      <div class="scoring">
+        <div id="Human">You: </div>
+        <div id="Computer">Computer: </div>
+      </div>
     </div>
   </body>
 </html>
