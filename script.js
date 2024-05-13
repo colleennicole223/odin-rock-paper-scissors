@@ -1,21 +1,5 @@
 
-let main = document.querySelector('#main');
 
-main.addEventListener('click', (event) => {
-    let target = event.target;
-
-    switch(target.id) {
-        case 'rock':
-            console.log('Home menu item was clicked');
-            break;
-        case 'paper':
-            console.log('Dashboard menu item was clicked');
-            break;
-        case 'scissors':
-            console.log('Report menu item was clicked');
-            break;
-    }
-});
 
 function getComputerChoice() {
 
@@ -80,35 +64,39 @@ function playGame(playerChoice) {
 
     let computerChoice = getComputerChoice()
     let winner = identifyWinner(computerChoice, playerChoice)
+        
+        const winnerStatement = document.createElement("div");
+        winnerStatement.classList.add("winnerStatement");
+        winnerStatement.textContent = winner;
+        info.appendChild(winnerStatement);
+
+        if (winner.slice(0,1) == 'Y'){
+            playerPoints++;
+            console.log(playerPoints) ;
+        } else if (winner.slice(0,1) == 'I'){
+
+        } else if (winner.slice(0,1) == 'N'){
+            computerPoints = computerPoints + 1
+        } else {
+            computerPoints = computerPoints + 1
+        }
+
+        const scoreStatement = document.createElement("div");
+        scoreStatement.classList.add("scoreStatement");
+        scoreStatement.textContent = "Your Points: " + playerPoints + "   Computer Points: "  + computerPoints;
+        info.appendChild(scoreStatement);
     
-    if (winner.slice(0,1) == 'Y'){
-        playerPoints = playerPoints + 1
-    } else if (winner.slice(0,1) == 'I'){
 
-    } else if (winner.slice(0,1) == 'N'){
-        computerPoints = computerPoints + 1
-    } else {
-        computerPoints = computerPoints + 1
-    }
-
-    
-    const winnerStatement = document.createElement("div");
-    winnerStatement.classList.add("winnerStatement");
-    winnerStatement.textContent = winner;
-    info.appendChild(winnerStatement);
-    //alert(winner)
-    //alert("Your Points: " + playerPoints + "   Computer Points: "  + computerPoints);
-
-    if (playerPoints > computerPoints) {
-        alert("Great job, you won!")
-    } else if (playerPoints == computerPoints) {
-        alert("It was a tie!")
-    } else {
-        alert("Computer wins! Better luck next time!")
-    }
+        if (playerPoints > computerPoints) {
+            
+            return "Great job, you won!"
+        } else if (playerPoints == computerPoints) {
+            return "It was a tie!"
+        } else {
+            return "Computer wins! Better luck next time!"
+        }
     
     return
-
 }
 
 
