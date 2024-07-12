@@ -1,80 +1,85 @@
 /* style.css */
 
 body {
-    display: flex;
-    flex-direction:column;
-    justify-content: space-between;
-    margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    height: 600px;
-    background-color: rgb(23, 23, 23);
-}
-
-button {
-    border-width: 0px;
-}
-
-.graphic {
-    width: 50%;
-}
-
-.bannerText {
-    color: whitesmoke;
-    font-weight: 600;
-    font-size: 50px;
-    padding: 8px 16px;
-    margin: 16px;
-    
-}
-
-#main {
-    display: flex;
-    flex-direction:row;
-    flex: 1;
-}
-
-
-#info {
-    padding: 40px;
-    text-align: center;
-    color: whitesmoke;
-    font-size: 40px;
-}
-
-.scoring {
     display: flex;
     flex-direction: row;
+    margin: 0px;
+    color: rgb(112, 112, 112);
+    justify-content: center;
+
 }
 
-#rock {
-    padding: 20px;
+h2{
+    margin: 0;
+}
+
+/* ----------------------------------------------- */
+
+.mainSection, .statSection{
+    height: 100vh;
+    padding: 68px 32px;
+}
+
+.mainSection{
+    /* background-color: blue; */
+    width: 70%;
+    max-width: 1400px;
+}
+
+.selectionBlock{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    flex: 1;
-    background-color: #D9144B;
+    height: 100%;
+    gap: 10%;
+    padding-top: 86px;
+}
+
+.bubble{
+    display: flexbox;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    background-color: rgb(238, 238, 238);
+    border: 0px;
+    font-size: 7vw;
+    color: white;
+}
+
+/* ----------------------------------------------- */
+
+.statSection{
+    /* background-color: orange; */
+    width: 20%;
+    max-width: 500px;
     
 }
 
-#paper {
-    padding: 20px;
+.statBlock{
+    padding-bottom: 46px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    background-color: #14AAD9;
+    text-align: center;
+    gap: 16px;
 }
 
-#scissors {
-    padding: 20px;
+.stat{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: rgb(238, 238, 238);
     justify-content: center;
-    flex: 1;
-    background-color: #D9CB14;
+    align-items: center;
+    border-radius: 25px;
+    height: 50px;
+    width: 100%;
 }
 
+.doubleStat{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
 
+.doubleStat.stat{
+    width: 40%;
+}
