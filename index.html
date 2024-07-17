@@ -76,29 +76,63 @@
             scissors.style.textDecoration = "none";
           console.log("Player picks "+button.id);
           button.style.background ="lightBlue";
+
           playGame(button.id);
         })
       })
 
       function playGame(choice) {
-        playerChoice = choice;
         computerChoice = computerSelection();
+        identifyWinner(computerChoice, choice);
+        }        
+    
 
-        if(playerChoice == computerChoice){
-          console.log("Its a Tie");
-          if(playerChoice=="rock"){
-            rock.style.backgroundColor = "lightGrey";
-            rock.style.textDecoration = "underline";
-          }else if(playerChoice=="paper"){
-            paper.style.backgroundColor = "lightGrey";
+      function identifyWinner(computerChoice, playerChoice){
+        if(computerChoice==playerChoice){
+          tie(playerChoice);
+        }else if(computerChoice == "rock"){
+          if(playerChoice == "paper"){
+            console.log("---Paper beats Rock, Human wins---");
             paper.style.textDecoration = "underline";
-          }else if(playerChoice=="scissors"){
-            scissors.style.backgroundColor = "lightGrey";
+          }else{
+            console.log("---Rock beats Scissors, Computer wins---");
+            rock.style.textDecoration = "underline";
+          }
+        }else if(computerChoice == "paper"){
+          if(playerChoice == "scissors"){
+            console.log("---Scissors beats Rock, Human wins---");
+            scissors.style.textDecoration = "underline";
+          }else{
+            console.log("---Paper beats Rock, Computer wins---");
+            paper.style.textDecoration = "underline";
+          }
+        }else if(computerChoice == "scissors"){
+          if(playerChoice == "rock"){
+            console.log("---Rock beats Scissors, Human wins---");
+            rock.style.textDecoration = "underline";
+          }else{
+            console.log("---Scissors beats Paper, Computer wins---");
             scissors.style.textDecoration = "underline";
           }
         }
+      }
 
-        
+      function tie(choice){
+        console.log("Its a Tie");
+          switch(choice){
+          case "rock":
+            rock.style.backgroundColor = "lightGrey";
+            rock.style.textDecoration = "underline";
+            return;
+          case "paper":
+            paper.style.backgroundColor = "lightGrey";
+            paper.style.textDecoration = "underline";
+            return;
+          case "scissors":
+            scissors.style.backgroundColor = "lightGrey";
+            scissors.style.textDecoration = "underline";
+            return;
+          }
       }
 
       function computerSelection(){
