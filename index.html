@@ -25,23 +25,23 @@
       <div class="statBlock">
         <h2>Total Rounds</h2>
         <div class="stat">
-          <h4 id="totalRoundStat">3</h4>
+          <input id="totalRoundStat" value="3"></input>
         </div>
       </div>
       <div class="statBlock">
-        <h2>Rounds Left</h2>
+        <h2>Current Round</h2>
         <div class="stat">
-          <h4 id="roundLeftStat">X</h4>
+          <h4 id="currentRound">X</h4>
         </div>
       </div>
       <div class="statBlock">
         <h2>Human Win Info</h2>
         <div class="doubleStat">
           <div class="stat">
-            <h4 id="humanWinStat">X</h4>
+            <h4 id="humanWinStat">0</h4>
           </div>
           <div class="stat">
-            <h4 id="humanPercentStat">X</h4>
+            <h4 id="humanPercentStat">0</h4>
           </div>
         </div>
         
@@ -50,10 +50,10 @@
         <h2>Computer Win Info</h2>
         <div class="doubleStat">
           <div class="stat">
-            <h4 id="computerWinStat">X</h4>
+            <h4 id="computerWinStat">0</h4>
           </div>
           <div class="stat">
-            <h4 id="computerPercentStat">X</h4>
+            <h4 id="computerPercentStat">0</h4>
           </div>
         </div>
         </div>
@@ -63,30 +63,35 @@
     <script>
 
       const buttons = document.querySelectorAll("button");
+      const input = document.querySelector("input")
 
       buttons.forEach(button =>{
-        
         button.addEventListener("click", () => {
-          // clear selections
-            rock.style.backgroundColor = "rgb(238, 238, 238)";
-            rock.style.textDecoration = "none";
-            paper.style.backgroundColor = "rgb(238, 238, 238)";
-            paper.style.textDecoration = "none";
-            scissors.style.backgroundColor = "rgb(238, 238, 238)";
-            scissors.style.textDecoration = "none";
+          clearSelection();
           console.log("Player picks "+button.id);
           button.style.background ="lightBlue";
-
           playGame(button.id);
         })
       })
+
+      input.addEventListener("input", () => {
+        clearSelection();
+      })
+
+      function clearSelection() {
+        rock.style.backgroundColor = "rgb(238, 238, 238)";
+        rock.style.textDecoration = "none";
+        paper.style.backgroundColor = "rgb(238, 238, 238)";
+        paper.style.textDecoration = "none";
+        scissors.style.backgroundColor = "rgb(238, 238, 238)";
+        scissors.style.textDecoration = "none";
+      }
 
       function playGame(choice) {
         computerChoice = computerSelection();
         identifyWinner(computerChoice, choice);
         }        
     
-
       function identifyWinner(computerChoice, playerChoice){
         if(computerChoice==playerChoice){
           tie(playerChoice);
@@ -94,25 +99,31 @@
           if(playerChoice == "paper"){
             console.log("---Paper beats Rock, Human wins---");
             paper.style.textDecoration = "underline";
+            humanWinStat.textContent = increaseString(humanWinStat.textContent);
           }else{
             console.log("---Rock beats Scissors, Computer wins---");
             rock.style.textDecoration = "underline";
+            computerWinStat.textContent = increaseString(computerWinStat.textContent);
           }
         }else if(computerChoice == "paper"){
           if(playerChoice == "scissors"){
             console.log("---Scissors beats Rock, Human wins---");
             scissors.style.textDecoration = "underline";
+            humanWinStat.textContent = increaseString(humanWinStat.textContent);
           }else{
             console.log("---Paper beats Rock, Computer wins---");
             paper.style.textDecoration = "underline";
+            computerWinStat.textContent = increaseString(computerWinStat.textContent);
           }
         }else if(computerChoice == "scissors"){
           if(playerChoice == "rock"){
             console.log("---Rock beats Scissors, Human wins---");
             rock.style.textDecoration = "underline";
+            humanWinStat.textContent = increaseString(humanWinStat.textContent);
           }else{
             console.log("---Scissors beats Paper, Computer wins---");
             scissors.style.textDecoration = "underline";
+            computerWinStat.textContent = increaseString(computerWinStat.textContent);
           }
         }
       }
@@ -152,6 +163,8 @@
             return "scissors";
         }
       }
+
+      increaseString = (value) => {return (parseInt(value,10)+1)}
 
     </script>
 
