@@ -17,11 +17,14 @@ h2{
 /* ----------------------------------------------- */
 
 .mainSection, .statSection{
-    height: 100vh;
+    
     padding: 68px 32px;
 }
 
 .mainSection{
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
     /* background-color: blue; */
     width: 70%;
     max-width: 1400px;
@@ -31,9 +34,8 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100%;
+    height: fit-content;
     gap: 10%;
-    padding-top: 86px;
 }
 
 button{

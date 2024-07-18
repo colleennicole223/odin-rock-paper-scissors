@@ -20,6 +20,9 @@
         <button id="paper">P</button>
         <button id="scissors">S</button>
       </div>
+      <div >
+        <h1 id="results"> </h1>
+      </div>
     </div>
     <div class="statSection">
       <div class="statBlock">
@@ -31,7 +34,7 @@
       <div class="statBlock">
         <h2>Current Round</h2>
         <div class="stat">
-          <h4 id="currentRound">X</h4>
+          <h4 id="currentRound">0</h4>
         </div>
       </div>
       <div class="statBlock">
@@ -76,7 +79,17 @@
           clearSelection();
           console.log("Player picks "+button.id);
           button.style.background ="lightBlue";
+          console.log(totalRoundStat.value);
           playGame(button.id);
+          currentRound.textContent = increaseString(currentRound.textContent);
+          if(parseInt(currentRound.textContent)==(totalRoundStat.value)){
+            // Display Results 
+            results.textContent = displayWinner(parseInt(humanWinStat.textContent),parseInt(computerWinStat.textContent));
+          }else if(parseInt(currentRound.textContent)>(totalRoundStat.value)){
+            // Game is over, reset
+            resetGame();
+          }
+          
         })
       })
 
@@ -97,6 +110,8 @@
         clearSelection();
         humanWinStat.textContent = "0";
         computerWinStat.textContent = "0";
+        currentRound.textContent = "0";
+        results.textContent = ""
       }
 
       function playGame(choice) {
@@ -140,8 +155,17 @@
         }
       }
 
+      function displayWinner(humanCount, computerCount) {
+        if(humanCount>computerCount){
+          return "Congratulations human, you won!";
+        }else{
+          return "Computer wins, better luck next time"
+        }
+      };
+
       function tie(choice){
         console.log("Its a Tie");
+          currentRound.textContent = reduceString(currentRound.textContent);
           switch(choice){
           case "rock":
             rock.style.backgroundColor = "lightGrey";
@@ -177,6 +201,7 @@
       }
 
       increaseString = (value) => {return (parseInt(value,10)+1);}
+      reduceString = (value) => {return (parseInt(value,10)-1);}
 
     </script>
 
