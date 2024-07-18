@@ -36,26 +36,32 @@
       </div>
       <div class="statBlock">
         <h2>Human Win Info</h2>
-        <div class="doubleStat">
+        <div class="stat">
+          <h4 id="humanWinStat">0</h4>
+        </div>
+        <!-- <div class="doubleStat">
           <div class="stat">
             <h4 id="humanWinStat">0</h4>
           </div>
           <div class="stat">
             <h4 id="humanPercentStat">0</h4>
           </div>
-        </div>
+        </div> -->
         
       </div>
       <div class="statBlock">
         <h2>Computer Win Info</h2>
-        <div class="doubleStat">
+        <div class="stat">
+          <h4 id="computerWinStat">0</h4>
+        </div>
+        <!-- <div class="doubleStat">
           <div class="stat">
             <h4 id="computerWinStat">0</h4>
           </div>
           <div class="stat">
             <h4 id="computerPercentStat">0</h4>
           </div>
-        </div>
+        </div> -->
         </div>
       </div>
     </div>
@@ -75,7 +81,7 @@
       })
 
       input.addEventListener("input", () => {
-        clearSelection();
+        resetGame();
       })
 
       function clearSelection() {
@@ -85,6 +91,12 @@
         paper.style.textDecoration = "none";
         scissors.style.backgroundColor = "rgb(238, 238, 238)";
         scissors.style.textDecoration = "none";
+      }
+
+      function resetGame(){
+        clearSelection();
+        humanWinStat.textContent = "0";
+        computerWinStat.textContent = "0";
       }
 
       function playGame(choice) {
@@ -164,7 +176,7 @@
         }
       }
 
-      increaseString = (value) => {return (parseInt(value,10)+1)}
+      increaseString = (value) => {return (parseInt(value,10)+1);}
 
     </script>
 
