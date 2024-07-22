@@ -1,5 +1,66 @@
-# rock-paper-scissors
 
-A simple project designed in Figma and implemented with HTML, CSS, and JS. 
+# The Oden Project - Rock, Paper, Scissors Solution 
 
-Play Rock, Paper, Scissors against your computer over a user-defined amount of rounds 🪨📃✂️
+This is a solution to the [Rock 🪨, Paper 📃, Scissors ✂️ challenge on The Oden Project](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors). The Odin Project is a free open-source coding curriculum that provides a comprehensive study path for aspiring developers. 
+
+## Table of contents
+
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+
+
+
+**Note: Delete this note and update the table of contents based on what sections you keep.**
+
+## Overview
+
+### Screenshot
+
+
+#### Final 
+Final screen after playing a round 
+
+![](./screenshot-final.png)
+
+#### Wireframe
+Prototype for the general layout 
+
+![](./screenshot-wireframe.png)
+
+
+### Links
+
+- Code URL: [https://github.com/colleennicole223/odin-rock-paper-scissors](https://github.com/colleennicole223/odin-rock-paper-scissors)
+- Live Site URL: [https://colleennicole223.github.io/odin-rock-paper-scissors/](https://colleennicole223.github.io/odin-rock-paper-scissors/)
+
+## My process
+
+### Built with
+- HTML
+- CSS
+  - Flex Containers 
+- JavaScript 
+  - Switch Statement
+  - Event Listeners 
+
+
+### What I learned
+
+This project had me using event listeners for the first time. It was easier to understand once I had a better grasp on arrow functions. I enjoyed being able to directly call elements with their ID and change it style or text content, this allowed me to change button colors based on human or computer selection. I also updated text decorations to add an underline on the winning selection. 
+
+### Continued development
+
+Need more practice with event listeners, with more experience I think I would have set this project up differently and could have added some more user-friendly features.  
+
+## Author
+
+- Personal Website - [Colleen Nicole](https://www.colleennicole.com)
+- Project Website - [The Odin Project](https://www.theodinproject.com)
+
+
