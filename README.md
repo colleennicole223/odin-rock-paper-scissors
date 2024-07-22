@@ -1,7 +1,7 @@
 
-# The Oden Project - Rock, Paper, Scissors Solution 
+# The Odin Project - Rock, Paper, Scissors Solution 
 
-This is a solution to the [Rock 🪨, Paper 📃, Scissors ✂️ challenge on The Oden Project](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors). The Odin Project is a free open-source coding curriculum that provides a comprehensive study path for aspiring developers. 
+This is a solution to the [Rock 🪨, Paper 📃, Scissors ✂️ challenge on The Odin Project](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors). The Odin Project is a free open-source coding curriculum that provides a comprehensive study path for aspiring developers. 
 
 ## Table of contents
 
@@ -48,11 +48,12 @@ Prototype for the general layout
 - JavaScript 
   - Switch Statement
   - Event Listeners 
+  - DOM manipulation
 
 
 ### What I learned
 
-This project had me using event listeners for the first time. It was easier to understand once I had a better grasp on arrow functions. I enjoyed being able to directly call elements with their ID and change it style or text content, this allowed me to change button colors based on human or computer selection. I also updated text decorations to add an underline on the winning selection. 
+This project had me using DOM manipulation and Events for the first time. It was easier to understand the format once I had a better grasp on arrow functions. I attached event listeners to the rock, paper, and scissor button nodes to read the users selection. I enjoyed being able to directly target nodes with selectors and change their properties - this allowed me to change button colors based on human or computer selection.  
 
 ### Continued development
 
